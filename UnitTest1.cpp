@@ -14,6 +14,19 @@ namespace UnitTest1
 		TEST_METHOD(Mean) {
 			ExtArray<int> v1{ 4, 2, 7, 3, -5, 0, -3, 1 };
 			Assert::AreEqual(v1.mean(), 1.125);
+			try
+			{
+				if (static_cast<int>(v1.size()));
+				throw 0;
+			}
+			catch (int code)
+			{
+				std::cout << "Error code: " << code << std::endl;
+			}
+			catch (const char* error_message)
+			{
+				std::cout << error_message << std::endl;
+			}
 		}
 		TEST_METHOD(Median) {
 			ExtArray<double> v2{ 4.5, 0.7, 10.8, -3.5 };
